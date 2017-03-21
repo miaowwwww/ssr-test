@@ -1,5 +1,5 @@
 # SSR总结
-step 1 
+## step 1 
 	服务端发送url请求
 	后台创建一个store，获取preloadState，
 	配合react-dom/server的renderToString把react组件变成字符串
@@ -9,10 +9,10 @@ step 1
 	因为服务端渲染的html，跟客户端新生的react组件是相同的state，相同的view，所以是相同的DOM
 	（好处，大大减少了性能负担，因为不需要获取数据了，处理速度更快，并且处理结束之前已经看到页面了）
 
-redux 部分
+## redux 部分
 	在每次请求都要创建一个store，得到一个preloadState，然后需要把preloaderState是用来给客户端用的。
 
-react-router 部分
+## react-router 部分
 	使用match获取{routes, location} 联系
 		routes是配置好的路由系统，注意不包括Router，只有Route
 		location是请求的url路径 req.url
